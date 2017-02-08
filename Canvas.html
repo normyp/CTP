@@ -1,13 +1,24 @@
-<body onload="start()">
+<!DOCTYPE html>
+<html>
+<body>
   <canvas id="glCanvas" width="640" height="480">
     Your browser doesn't appear to support the 
     <code>&lt;canvas&gt;</code> element.
   </canvas>
-</body>
+
+<!-- 
+  All JS code needs to be inline in a <script> element
+  Or loaded from an external file: <script src="/my-script.js"></script>
+-->
+<script type="text/javascript">
+'use strict';
+// Strict mode enabled. Basically provides you better error messages and prevents
+// you from doing things you shouldn't do.
 
 var gl; // A global variable for the WebGL context
 
-function start() {
+// we can set the onload event handler on the window global object
+window.onload = function() {
   var canvas = document.getElementById('glCanvas');
 
   // Initialize the GL context
@@ -26,4 +37,7 @@ function start() {
   gl.depthFunc(gl.LEQUAL);
   // Clear the color as well as the depth buffer.
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-}
+};
+</script>
+</body>
+</html>
